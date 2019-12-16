@@ -7,7 +7,8 @@ const config = {
   'oauth_host': 'github.com',
   'oauth_port': 443,
   'oauth_path': '/login/oauth/access_token',
-  'oauth_method': 'POST'
+  'oauth_method': 'POST',
+  'cors_origin': process.env.CORS_ORIGIN || '*'
 }
 
 function authenticate(code) {
@@ -50,7 +51,8 @@ function sendRes(status, body) {
     isBase64Encoded: false,
     statusCode: status,
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': config.cors_origin
     },
     body: JSON.stringify(body)
   };

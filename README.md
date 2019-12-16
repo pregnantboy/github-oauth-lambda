@@ -1,7 +1,10 @@
 # Github OAuth Lambda Function
 
 - No dependencies!
-- Environment Variables: `CLIENT_ID` & `CLIENT_SECRET`
+- Environment Variables: 
+  - `CLIENT_ID`
+  - `CLIENT_SECRET`
+  - `CORS_ORIGIN`
 - Successful response (`application/json`)
 ```
 {
