@@ -59,7 +59,7 @@ function sendRes(status, body) {
 
 exports.handler = async (event) => {
   try {
-    const token = await authenticate(event.queryStringParameters.code)
+    const token = await authenticate(event.pathParameters.code)
     if (!token) {
       throw new Error('Invalid code')
     }
